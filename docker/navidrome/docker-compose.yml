@@ -1,0 +1,20 @@
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    container_name: navidrome
+    restart: unless-stopped
+    user: "1000:1000"
+    ports:
+      - "4533:4533"
+    environment:
+      # Scanner settings
+      ND_SCANNER_SCHEDULE: "1h"
+      ND_LOGLEVEL: "info"
+      ND_SESSIONTIMEOUT: "24h"
+      ND_BASEURL: ""
+      # Transcoding
+      ND_ENABLETRANSCODINGCONFIG: "true"
+      ND_DEFAULTLANGUAGE: "pt-br"
+    volumes:
+      - ./data:/data
+      - /path/to/your/music:/music:ro

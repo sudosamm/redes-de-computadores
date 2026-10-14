@@ -1,7 +1,7 @@
 services:
   jellyfin:
     image: jellyfin/jellyfin:latest
-    container_name: jellyfin
+    container_name: me_de_um_nome
     user: "1000:1000"  # Change to match your host user's UID:GID
     group_add:
       - "122"  # Render group ID for hardware transcoding — run: getent group render | cut -d: -f3

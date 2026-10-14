@@ -1,7 +1,7 @@
 services:
   navidrome:
     image: deluan/navidrome:latest
-    container_name: navidrome
+    container_name: me_de_um_nome
     restart: unless-stopped
     user: "1000:1000"
     ports:

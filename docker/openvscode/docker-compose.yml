@@ -1,0 +1,19 @@
+services:
+  openvscode:
+    image: gitpod/openvscode-server:latest
+    container_name: openvscode-server
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./workspace:/home/workspace:cached    # Your code projects
+      - vscode-data:/home/.openvscode-server  # Extensions, settings, state
+      - ./workspace:/home/workspace:cached
+      - ./user/projects:/home/projects:cached
+      - ./opt/repos:/home/repos:cached
+    environment:
+      - CONNECTION_TOKEN=${CONNECTION_TOKEN}   # Authentication token
+    user: "1000:1000"  # Match your host user UID:GID
+
+volumes:
+  vscode-data:

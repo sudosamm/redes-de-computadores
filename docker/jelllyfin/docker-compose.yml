@@ -1,0 +1,25 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    user: "1000:1000"  # Change to match your host user's UID:GID
+    group_add:
+      - "122"  # Render group ID for hardware transcoding — run: getent group render | cut -d: -f3
+    ports:
+      - "8096:8096/tcp"   # Web UI
+      - "7359:7359/udp"   # Client auto-discovery on local network
+    volumes:
+      - jellyfin-config:/config
+      - jellyfin-cache:/cache 
+      - /path/to/movies:/media/movies:ro
+      - /path/to/tv:/media/tv:ro
+      - /path/to/music:/media/music:ro
+    environment:
+      - JELLYFIN_PublishedServerUrl=http://your-server-ip:8096
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128  # Intel/AMD GPU for hardware transcoding (remove if not using)
+    restart: unless-stopped
+
+volumes:
+  jellyfin-config:
+  jellyfin-cache:

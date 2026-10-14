@@ -33,7 +33,11 @@ Quando tudo estiver bem definido, basta executar o container:
 ```bash
 sudo docker-compose up -d
 ```
-Agora tente acessar o seu serviço utilizando `seu-ip:porta`. Caso ele não carregue ou caso mostre alguma mensagem de erro, utilize o comando abaixo para verificar o estado do container:
+Agora tente acessar o seu serviço utilizando: 
+```
+http://seu-ip:porta
+```
+Caso ele não carregue ou caso mostre alguma mensagem de erro, utilize o comando abaixo para verificar o estado do container:
 ```bash
 sudo docker ps
 ```

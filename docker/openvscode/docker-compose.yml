@@ -1,7 +1,7 @@
 services:
   openvscode:
     image: gitpod/openvscode-server:latest
-    container_name: openvscode-server
+    container_name: me_de_um_nome
     restart: unless-stopped
     ports:
       - "3000:3000"

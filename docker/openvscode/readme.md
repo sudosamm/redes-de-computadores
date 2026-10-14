@@ -1,4 +1,5 @@
 ## Para prosseguir com este container você precisará de um arquivo .env junto do docker-compose.yml.
 O arquivo .env irá armazenar uma senha criptografada: ela será uma senha única de acesso ao seu vscode.<br>
 Utilize o seguinte comando no terminal: ```echo "CONNECTION_TOKEN=$(openssl rand -hex 24)" > .env```<br>
-Após este comando, o arquivo .env será criado na sua pasta e você poderá seguir com a criação do container.
+Após este comando, o arquivo .env será criado na sua pasta e você poderá seguir com a criação do container.<br>
+Com o container rodando, acesse seu serviço utilizando `seu-ip:porta/?tkn=SEU_TOKEN`. Essa ação precisa ser executada apenas uma única vez.
